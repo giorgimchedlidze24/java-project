@@ -124,40 +124,40 @@ class GamePanel extends JPanel implements ActionListener {
         }
     }
     public void checkCollisions() {
-        //if head collide body
+
         for (int i = bodyParts; i > 0; i--) {
             if ((X[0] == X[i]) && (y[0] == y[i])) {
                 running = false;
             }
         }
-        //if head collide with left boarder
+
         if (X[0] < 0) {
             running = false;
         }
-        //head touch right
+
         if (X[0] > SCREEN_WIDTH) {
             running = false;
         }
-        //head touch top
+
         if (y[0] < 0) {
             running = false;
         }
-        //head touch bottom border
+
         if (y[0] > SCREEN_HEIGHT) {
             running = false;
         }
         if(!running){
             timer.stop();
-            ///// running=false;
+
         }
     }
     public void gameOver(Graphics g){
-        //
+
         g.setColor(Color.red);
         g.setFont(new Font("Ink Free",Font.BOLD,40));
         FontMetrics matrics1 = getFontMetrics(g.getFont());
         g.drawString("score: "+applesEaten,(SCREEN_WIDTH - matrics1.stringWidth("score: "+applesEaten))/2,g.getFont().getSize());
-        //game over text
+
         g.setColor(Color.red);
         g.setFont(new Font("Ink Free",Font.BOLD,75));
         FontMetrics matrics2 = getFontMetrics(g.getFont());
